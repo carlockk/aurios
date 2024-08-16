@@ -1,8 +1,11 @@
 const express = require('express');
-const { getAllGuitars } = require('../controllers/guitarController');
+const { getAllGuitars, createGuitar, updateGuitarById, deleteGuitarById } = require('../controllers/guitarController');
 
 const guitarRouter = express.Router();
 
-guitarRouter.get('/readall', getAllGuitars); //http://localhost:3000/api/product/readall
+guitarRouter.get('/obtener-guitarras', getAllGuitars);
+guitarRouter.post('/crear-guitarra', createGuitar);
+guitarRouter.put('/actualizar-guitarra', updateGuitarById);
+guitarRouter.delete('/borrar-guitarra', deleteGuitarById);
 
 module.exports = guitarRouter;
