@@ -2,19 +2,19 @@
 const express = require('express');
 const auth = require('../middleware/authorization');
 const {
-  createGuitar,
-  getAllGuitars,
-  getGuitarById,
-  updateGuitar,
-  deleteGuitar
-} = require('../controllers/guitarController');
+  createProduct,
+  getAllProducts,
+  getProductById,
+  updateProduct,
+  deleteProduct
+} = require('../controllers/productController');
 
 const router = express.Router();
 
-router.post('/create', auth, createGuitar);
-router.get('/readall', getAllGuitars);
-router.get('/readone/:id', getGuitarById);
-router.put('/update/:id', auth, updateGuitar);
-router.delete('/delete/:id', auth, deleteGuitar);
+router.post('/create', auth, createProduct);
+router.get('/readall', getAllProducts);
+router.get('/readone/:id', getProductById);
+router.put('/update/:id', auth, updateProduct);
+router.delete('/delete/:id', auth, deleteProduct);
 
 module.exports = router;
