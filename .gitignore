@@ -1,2 +1,18 @@
-node_modules
+# Node modules
+node_modules/
+
+# Entornos
 .env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# IDEs (Visual Studio Code, etc.)
+.vscode/
+.idea/

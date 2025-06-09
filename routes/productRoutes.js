@@ -11,10 +11,10 @@ const {
 
 const router = express.Router();
 
-router.post('/', auth, createGuitar);
-router.get('/', getAllGuitars);
-router.get('/:id', getGuitarById);
-router.put('/:id', auth, updateGuitar);
-router.delete('/:id', auth, deleteGuitar);
+router.post('/create', auth, createGuitar);
+router.get('/readall', getAllGuitars);
+router.get('/readone/:id', getGuitarById);
+router.put('/update/:id', auth, updateGuitar);
+router.delete('/delete/:id', auth, deleteGuitar);
 
 module.exports = router;

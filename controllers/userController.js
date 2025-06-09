@@ -94,3 +94,13 @@ exports.getAllUsers = async (req, res) => {
         })
     }
 }
+// Actualizar usuario
+exports.updateUser = async (req, res) => {
+  try {
+    const updated = await Usuario.findByIdAndUpdate(req.user.id, req.body, { new: true });
+    if (!updated) return res.status(404).json({ error: 'Usuario no encontrado' });
+    res.json(updated);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};

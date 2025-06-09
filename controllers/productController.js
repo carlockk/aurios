@@ -1,10 +1,10 @@
 
-const Guitarra = require('../models/Guitarra');
+const Producto = require('../models/Producto');
 
 // Crear nueva guitarra
 exports.createGuitar = async (req, res) => {
   try {
-    const nueva = new Guitarra(req.body);
+    const nueva = new Producto({ ...req.body, usuario: req.user.id });
     const guardada = await nueva.save();
     res.status(201).json(guardada);
   } catch (err) {
@@ -15,7 +15,7 @@ exports.createGuitar = async (req, res) => {
 // Obtener todas las guitarras
 exports.getAllGuitars = async (req, res) => {
   try {
-    const guitarras = await Guitarra.find();
+    const guitarras = await Producto.find();
     res.json(guitarras);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -25,7 +25,7 @@ exports.getAllGuitars = async (req, res) => {
 // Obtener una guitarra por ID
 exports.getGuitarById = async (req, res) => {
   try {
-    const guitarra = await Guitarra.findById(req.params.id);
+    const guitarra = await Producto.findById(req.params.id);
     if (!guitarra) return res.status(404).json({ error: 'No encontrada' });
     res.json(guitarra);
   } catch (err) {
@@ -36,7 +36,7 @@ exports.getGuitarById = async (req, res) => {
 // Actualizar guitarra
 exports.updateGuitar = async (req, res) => {
   try {
-    const actualizada = await Guitarra.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const actualizada = await Producto.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!actualizada) return res.status(404).json({ error: 'No encontrada' });
     res.json(actualizada);
   } catch (err) {
@@ -47,7 +47,7 @@ exports.updateGuitar = async (req, res) => {
 // Eliminar guitarra
 exports.deleteGuitar = async (req, res) => {
   try {
-    const eliminada = await Guitarra.findByIdAndDelete(req.params.id);
+    const eliminada = await Producto.findByIdAndDelete(req.params.id);
     if (!eliminada) return res.status(404).json({ error: 'No encontrada' });
     res.json({ message: 'Eliminada correctamente' });
   } catch (err) {
