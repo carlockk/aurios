@@ -3,7 +3,7 @@
 
 ## 🧪 Thunder Client – Rutas disponibles
 
-### 🔐 Usuarios
+### Usuarios
 
 | Acción                          | Método | Endpoint |
 |-------------------------------|--------|----------|
@@ -18,7 +18,7 @@
 
 ---
 
-### 📦 Productos
+### Productos
 
 | Acción                    | Método | Endpoint |
 |--------------------------|--------|----------|
@@ -30,24 +30,19 @@
 
 ---
 
-## 🌐 Despliegue
+## Despliegue
 
-Este proyecto está listo para ser desplegado en:
-- 🔄 [Render.com](https://render.com)
-- 🌍 [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+Proyecto está listo para ser desplegado en:
+- 🔄 [Render.com](https://railway.com/) (Rutas temporales hasta la subida de la real)
+- 🌍 [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) (Rutas temporales hasta la subida de la real)
 
-Agrega aquí tus URLs cuando estén listas.
 
 ---
 
-## ✅ Requisitos
+## Requisitos
 
 - Node.js  
 - MongoDB local o Atlas  
 - Thunder Client / Postman para pruebas
 
 ---
-
-## 🔓 Licencia
-
-MIT
