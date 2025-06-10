@@ -13,10 +13,10 @@
 | Obtener todos los usuarios | GET  | https://auriosback-production.up.railway.app/api/users/getAll         |
 | Actualizar perfil usuario | PUT   | https://auriosback-production.up.railway.app/api/users/update         |
 
-**Nota:** Para las rutas protegidas, incluye el siguiente encabezado:
+**Nota:** Para rutas protegidas, ponga el siguiente encabezado:
 
 
-Authorization: Bearer TU_TOKEN_JWT
+Authorization: Bearer TOKEN_JWT
 
 
 ## Productos
