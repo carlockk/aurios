@@ -94,6 +94,7 @@ Puede obtener un token iniciando sesión con `POST /api/users/login`.
 npm install       # Instala dependencias
 npm run dev       # Ejecuta en desarrollo con nodemon
 npm run start     # Ejecuta en producción (Railway)
+npm install swagger-ui-express swagger-jsdoc  # Ejecuta en producción swagger
 ```
 
 ---
