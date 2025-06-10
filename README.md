@@ -3,23 +3,32 @@
 
 ## 🧪 Thunder Client – Rutas disponibles
 
-##Usuarios
-Acción	Método	Endpoint
-Registrar usuario	POST	https://auriosback-production.up.railway.app/api/users/register
-Login de usuario (JWT)	POST	https://auriosback-production.up.railway.app/api/users/login
-Verificar token	GET	https://auriosback-production.up.railway.app/api/users/verifytoken
-Obtener todos los usuarios	GET	https://auriosback-production.up.railway.app/api/users/getAll
-Actualizar perfil usuario	PUT	https://auriosback-production.up.railway.app/api/users/update
+## Usuarios
+
+| Acción                    | Método | Endpoint                                                               |
+|--------------------------|--------|------------------------------------------------------------------------|
+| Registrar usuario        | POST   | https://auriosback-production.up.railway.app/api/users/register       |
+| Login de usuario (JWT)   | POST   | https://auriosback-production.up.railway.app/api/users/login          |
+| Verificar token          | GET    | https://auriosback-production.up.railway.app/api/users/verifytoken    |
+| Obtener todos los usuarios | GET  | https://auriosback-production.up.railway.app/api/users/getAll         |
+| Actualizar perfil usuario | PUT   | https://auriosback-production.up.railway.app/api/users/update         |
+
+**Nota:** Para las rutas protegidas, incluye el siguiente encabezado:
+
 
 Authorization: Bearer TU_TOKEN_JWT
 
-##Productos
-Acción	Método	Endpoint
-Crear nuevo producto	POST	https://auriosback-production.up.railway.app/api/product/create
-Obtener todos los productos	GET	https://auriosback-production.up.railway.app/api/product/readall
-Obtener un producto por ID	GET	https://auriosback-production.up.railway.app/api/product/readone/:id
-Actualizar producto por ID	PUT	https://auriosback-production.up.railway.app/api/product/update/:id
-Eliminar producto por ID	DELETE	https://auriosback-production.up.railway.app/api/product/delete/:id
+
+## Productos
+
+| Acción                     | Método | Endpoint                                                               |
+|---------------------------|--------|------------------------------------------------------------------------|
+| Crear nuevo producto       | POST   | https://auriosback-production.up.railway.app/api/product/create       |
+| Obtener todos los productos| GET    | https://auriosback-production.up.railway.app/api/product/readall      |
+| Obtener un producto por ID | GET    | https://auriosback-production.up.railway.app/api/product/readone/:id  |
+| Actualizar producto por ID | PUT    | https://auriosback-production.up.railway.app/api/product/update/:id   |
+| Eliminar producto por ID   | DELETE | https://auriosback-production.up.railway.app/api/product/delete/:id   |
+
 
 ---
 
