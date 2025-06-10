@@ -10,8 +10,8 @@ const swaggerSpec = swaggerJSDoc({
     },
     servers: [
       {
-        url: 'https://auriosback-production.up.railway.app',
-        description: 'Producción (Railway)',
+        url: 'https://aurios-production.up.railway.app',
+        description: 'Producción',
       },
       {
         url: 'http://localhost:3001',
