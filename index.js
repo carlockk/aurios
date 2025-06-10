@@ -14,18 +14,16 @@ const swaggerSpec = require('./config/swagger');
 // Conexión a base de datos
 connectDB();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Documentación Swagger
+// ✅ Montar Swagger
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// Rutas
+// Rutas API
 app.use('/api/users', userRouter);
 app.use('/api/product', productRouter);
 
-// Inicializar el servidor
-app.listen(process.env.PORT, () =>
-  console.log('Servidor escuchando en el puerto ' + process.env.PORT)
-);
+app.listen(process.env.PORT, () => {
+  console.log('Servidor escuchando en el puerto ' + process.env.PORT);
+});
