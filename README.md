@@ -1,50 +1,106 @@
+# Aurios API
+
+API REST Node.js + Express para autenticación de usuarios, gestión de productos y documentación Swagger, con base de datos MongoDB. Ideal como backend base para aplicaciones de e-commerce, POS o sistemas administrativos que requieren autenticación y control de datos.
 
 ---
 
-## 🧪 Thunder Client – Rutas disponibles
+## Documentación Swagger
 
-## Usuarios
+La API está documentada visualmente con Swagger:
 
-| Acción                    | Método | Endpoint                                                               |
-|--------------------------|--------|------------------------------------------------------------------------|
-| Registrar usuario        | POST   | https://auriosback-production.up.railway.app/api/users/register       |
-| Login de usuario (JWT)   | POST   | https://auriosback-production.up.railway.app/api/users/login          |
-| Verificar token          | GET    | https://auriosback-production.up.railway.app/api/users/verifytoken    |
-| Obtener todos los usuarios | GET  | https://auriosback-production.up.railway.app/api/users/getAll         |
-| Actualizar perfil usuario | PUT   | https://auriosback-production.up.railway.app/api/users/update         |
+[https://aurios-production.up.railway.app/api-docs](https://aurios-production.up.railway.app/api-docs)
 
-**Nota:** Para rutas protegidas, ponga el siguiente encabezado:
-
-
-Authorization: Bearer TOKEN_JWT
-
-
-## Productos
-
-| Acción                     | Método | Endpoint                                                               |
-|---------------------------|--------|------------------------------------------------------------------------|
-| Crear nuevo producto       | POST   | https://auriosback-production.up.railway.app/api/product/create       |
-| Obtener todos los productos| GET    | https://auriosback-production.up.railway.app/api/product/readall      |
-| Obtener un producto por ID | GET    | https://auriosback-production.up.railway.app/api/product/readone/:id  |
-| Actualizar producto por ID | PUT    | https://auriosback-production.up.railway.app/api/product/update/:id   |
-| Eliminar producto por ID   | DELETE | https://auriosback-production.up.railway.app/api/product/delete/:id   |
-
+Desde ahí puedes probar todos los endpoints con autenticación JWT incluida.
 
 ---
 
-## Despliegue
+## Tecnologías utilizadas
 
-Proyecto está listo para ser desplegado en:
-- 🔄 [Render.com](auriosback-production.up.railway.app)
-- 🌍 [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) (Rutas temporales hasta la subida de la real)
+- **Node.js** + **Express**
+- **MongoDB Atlas**
+- **Mongoose**
+- **JWT (jsonwebtoken)** para autenticación
+- **bcryptjs** para hash de contraseñas
+- **Swagger UI** para documentación
+- **dotenv** para manejo de variables de entorno
+- Despliegue en **Railway**
 
+---
+
+## structura del proyecto
+
+```
+api/
+│
+├── config/              # Conexión a MongoDB y Swagger config
+├── controllers/         # Lógica de usuarios y productos
+├── middleware/          # Middleware de autenticación
+├── models/              # Esquemas de Mongoose
+├── routes/              # Rutas de API documentadas con Swagger
+├── .env                 # Variables de entorno (ignorado en git)
+├── index.js             # Punto de entrada del servidor
+└── package.json         # Configuración de dependencias y scripts
+```
 
 ---
 
-## Requisitos
+## Autenticación
 
-- Node.js  
-- MongoDB local o Atlas  
-- Thunder Client / Postman para pruebas
+La API usa **JSON Web Tokens (JWT)**. Para acceder a rutas protegidas, debes incluir en los headers:
+
+```
+Authorization: Bearer TU_TOKEN_JWT
+```
+
+Puedes obtener un token iniciando sesión con `POST /api/users/login`.
 
 ---
+
+## Endpoints disponibles
+
+### 👤 Usuarios
+
+| Acción                     | Método | Endpoint                            |
+|---------------------------|--------|-------------------------------------|
+| Registrar usuario         | POST   | `/api/users/register`              |
+| Iniciar sesión (JWT)      | POST   | `/api/users/login`                 |
+| Verificar token           | GET    | `/api/users/verifytoken`          |
+| Obtener todos los usuarios| GET    | `/api/users/getAll`               |
+| Actualizar perfil         | PUT    | `/api/users/update`               |
+
+> 🔒 Requieren token: `verifytoken`, `update`
+
+---
+
+### Productos
+
+| Acción                      | Método | Endpoint                            |
+|----------------------------|--------|-------------------------------------|
+| Crear producto             | POST   | `/api/product/create`              |
+| Obtener todos los productos| GET    | `/api/product/readall`             |
+| Obtener producto por ID    | GET    | `/api/product/readone/:id`         |
+| Actualizar producto        | PUT    | `/api/product/update/:id`          |
+| Eliminar producto          | DELETE | `/api/product/delete/:id`          |
+
+> Requieren token: `create`, `update`, `delete`
+
+---
+
+## 🛠 Scripts
+
+```bash
+npm install       # Instala dependencias
+npm run dev       # Ejecuta en desarrollo con nodemon
+npm run start     # Ejecuta en producción (Railway)
+```
+
+---
+
+## 🛰 Despliegue
+
+- 🌐 Producción: [https://aurios-production.up.railway.app](https://aurios-production.up.railway.app)
+- 📘 Swagger Docs: [https://aurios-production.up.railway.app/api-docs](https://aurios-production.up.railway.app/api-docs)
+- 🗄️ MongoDB: [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+
+---
+
