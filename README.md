@@ -1,16 +1,16 @@
 # Aurios API
 
-API REST Node.js + Express para autenticación de usuarios, gestión de productos y documentación Swagger, con base de datos MongoDB. Ideal como backend base para aplicaciones de e-commerce, POS o sistemas administrativos que requieren autenticación y control de datos.
+API REST Node.js + Express para autenticación de usuarios, gestión de productos y documentación Swagger, con base de datos MongoDB. especial para sistemas que requieren autenticación y control de datos.
 
 ---
 
 ## Documentación Swagger
 
-La API está documentada visualmente con Swagger:
+La API está documentada con Swagger:
 
 [https://aurios-production.up.railway.app/api-docs](https://aurios-production.up.railway.app/api-docs)
 
-Desde ahí puedes probar todos los endpoints con autenticación JWT incluida.
+Desde ahí puede probar todos los endpoints con autenticación JWT incluida.
 
 ---
 
@@ -49,16 +49,16 @@ api/
 La API usa **JSON Web Tokens (JWT)**. Para acceder a rutas protegidas, debes incluir en los headers:
 
 ```
-Authorization: Bearer TU_TOKEN_JWT
+Authorization: Bearer TOKEN_JWT
 ```
 
-Puedes obtener un token iniciando sesión con `POST /api/users/login`.
+Puede obtener un token iniciando sesión con `POST /api/users/login`.
 
 ---
 
 ## Endpoints disponibles
 
-### 👤 Usuarios
+### Usuarios
 
 | Acción                     | Método | Endpoint                            |
 |---------------------------|--------|-------------------------------------|
@@ -68,7 +68,7 @@ Puedes obtener un token iniciando sesión con `POST /api/users/login`.
 | Obtener todos los usuarios| GET    | `/api/users/getAll`               |
 | Actualizar perfil         | PUT    | `/api/users/update`               |
 
-> 🔒 Requieren token: `verifytoken`, `update`
+> Requieren token: `verifytoken`, `update`
 
 ---
 
