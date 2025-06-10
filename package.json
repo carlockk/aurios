@@ -1,14 +1,15 @@
 {
   "name": "api-con-jwt-c23",
   "version": "1.0.0",
-  "description": "",
+  "description": "API con JWT, MongoDB y documentación Swagger",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Carlos",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
