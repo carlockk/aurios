@@ -50,6 +50,12 @@ se creo archivo swagger.js para la documentación
 
 La API usa **JSON Web Tokens (JWT)**. Para acceder a rutas protegidas, para incluir en los headers:
 Al crear un producto, ahora le asigna el usuario automáticamente desde el token JWT
+
+para poder realizar acciones como eliminar o agregar, debe ir primero:
+Ir al login, usar un usuario que puede ver al obtener todos los usuarios
+Luego Authorize parte superior derecha y poner el token sin ""
+Luego si desea verificar esta la opción
+Y luego puede ejecutar eliminar usuario u otras que requieran autenticación
 ```
 Authorization: Bearer TOKEN_JWT
 ```
