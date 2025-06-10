@@ -139,6 +139,7 @@ userRouter.get('/verifytoken', auth, verifyToken);
 userRouter.get('/getAll', getAllUsers);
 userRouter.put('/update', auth, updateUser);
 // agregado usuario eliminado se me habia olvidado
-userRouter.delete('/delete', auth, deleteUser);
+userRouter.delete('/delete/:id', auth, deleteUser);
+
 
 module.exports = userRouter;
