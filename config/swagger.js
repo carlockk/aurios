@@ -1,6 +1,6 @@
-const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerJSDoc = require('swagger-jsdoc');
 
-const swaggerSpec = swaggerJsdoc({
+const options = {
   definition: {
     openapi: '3.0.0',
     info: {
@@ -11,12 +11,12 @@ const swaggerSpec = swaggerJsdoc({
     servers: [
       {
         url: 'https://auriosback-production.up.railway.app',
-        description: 'Servidor en producción',
+        description: 'Producción (Railway)',
       },
       {
         url: 'http://localhost:3001',
-        description: 'Servidor local',
-      },
+        description: 'Desarrollo local',
+      }
     ],
     components: {
       securitySchemes: {
@@ -24,16 +24,14 @@ const swaggerSpec = swaggerJsdoc({
           type: 'http',
           scheme: 'bearer',
           bearerFormat: 'JWT',
-        },
-      },
+        }
+      }
     },
-    security: [
-      {
-        bearerAuth: [],
-      },
-    ],
+    security: [{
+      bearerAuth: []
+    }]
   },
   apis: ['./routes/*.js'],
-});
+};
 
-module.exports = swaggerSpec;
+module.exports = swaggerJSDoc(options);
