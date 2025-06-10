@@ -5,7 +5,8 @@ const {
   login,
   verifyToken,
   getAllUsers,
-  updateUser
+  updateUser,
+  deleteUser
 } = require('../controllers/userController');
 
 const userRouter = express.Router();
