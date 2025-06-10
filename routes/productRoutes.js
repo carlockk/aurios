@@ -34,17 +34,14 @@ const router = express.Router();
  *             required:
  *               - nombre
  *               - precio
- *               - usuario
  *             properties:
  *               nombre:
  *                 type: string
  *               precio:
  *                 type: number
- *               usuario:
- *                 type: string
  *     responses:
  *       201:
- *         description: Producto creado
+ *         description: Producto creado correctamente
  */
 
 /**
