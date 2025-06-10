@@ -116,6 +116,20 @@ const userRouter = express.Router();
  *     responses:
  *       200:
  *         description: Usuario actualizado
+
+ // userRoutes.js - Agregar documentación Swagger y ruta
+
+/**
+ * @swagger
+ * /api/users/delete:
+ *   delete:
+ *     summary: Eliminar el usuario actual
+ *     tags: [Usuarios]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Usuario eliminado
  */
 
 userRouter.post('/register', createUser);
@@ -123,5 +137,7 @@ userRouter.post('/login', login);
 userRouter.get('/verifytoken', auth, verifyToken);
 userRouter.get('/getAll', getAllUsers);
 userRouter.put('/update', auth, updateUser);
+// agregado usuario eliminado se me habia olvidado
+userRouter.delete('/delete', auth, deleteUser);
 
 module.exports = userRouter;
