@@ -11,21 +11,17 @@ const productRouter = require('./routes/productRoutes');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./config/swagger');
 
-// Conexión a base de datos
 connectDB();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Documentación Swagger
+// ✅ Swagger debe estar antes de las rutas
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// Rutas
 app.use('/api/users', userRouter);
 app.use('/api/product', productRouter);
 
-// Inicializar servidor
 app.listen(process.env.PORT, () =>
   console.log('Servidor escuchando en el puerto ' + process.env.PORT)
 );
