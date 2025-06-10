@@ -42,6 +42,8 @@ api/
 └── package.json         # Configuración de dependencias y scripts
 ```
 
+se creo archivo swagger.js para la documentación
+
 ---
 
 ## Autenticación
