@@ -48,7 +48,7 @@ se creo archivo swagger.js para la documentación
 
 ## Autenticación
 
-La API usa **JSON Web Tokens (JWT)**. Para acceder a rutas protegidas, debes incluir en los headers:
+La API usa **JSON Web Tokens (JWT)**. Para acceder a rutas protegidas, para incluir en los headers:
 Al crear un producto, ahora le asigna el usuario automáticamente desde el token JWT
 ```
 Authorization: Bearer TOKEN_JWT
