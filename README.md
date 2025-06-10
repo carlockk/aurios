@@ -3,37 +3,30 @@
 
 ## 🧪 Thunder Client – Rutas disponibles
 
-### Usuarios
+##Usuarios
+Acción	Método	Endpoint
+Registrar usuario	POST	https://auriosback-production.up.railway.app/api/users/register
+Login de usuario (JWT)	POST	https://auriosback-production.up.railway.app/api/users/login
+Verificar token	GET	https://auriosback-production.up.railway.app/api/users/verifytoken
+Obtener todos los usuarios	GET	https://auriosback-production.up.railway.app/api/users/getAll
+Actualizar perfil usuario	PUT	https://auriosback-production.up.railway.app/api/users/update
 
-| Acción                          | Método | Endpoint |
-|-------------------------------|--------|----------|
-| Registrar usuario             | POST   | `http://localhost:3001/api/users/register` |
-| Login de usuario (retorna JWT)| POST   | `http://localhost:3001/api/users/login`    |
-| Verificar token               | GET    | `http://localhost:3001/api/users/verifytoken` |
-| Obtener todos los usuarios    | GET    | `http://localhost:3001/api/users/getAll`   |
-| Actualizar perfil usuario     | PUT    | `http://localhost:3001/api/users/update`   |
+Authorization: Bearer TU_TOKEN_JWT
 
-> ⚠️ Para las rutas protegidas, incluye este header:
-> `Authorization: Bearer TU_TOKEN_JWT`
-
----
-
-### Productos
-
-| Acción                    | Método | Endpoint |
-|--------------------------|--------|----------|
-| Crear nuevo producto     | POST   | `http://localhost:3001/api/product/create`     |
-| Obtener todos los productos | GET | `http://localhost:3001/api/product/readall`    |
-| Obtener un producto por ID | GET | `http://localhost:3001/api/product/readone/:id`|
-| Actualizar producto por ID | PUT | `http://localhost:3001/api/product/update/:id` |
-| Eliminar producto por ID   | DELETE| `http://localhost:3001/api/product/delete/:id` |
+##Productos
+Acción	Método	Endpoint
+Crear nuevo producto	POST	https://auriosback-production.up.railway.app/api/product/create
+Obtener todos los productos	GET	https://auriosback-production.up.railway.app/api/product/readall
+Obtener un producto por ID	GET	https://auriosback-production.up.railway.app/api/product/readone/:id
+Actualizar producto por ID	PUT	https://auriosback-production.up.railway.app/api/product/update/:id
+Eliminar producto por ID	DELETE	https://auriosback-production.up.railway.app/api/product/delete/:id
 
 ---
 
 ## Despliegue
 
 Proyecto está listo para ser desplegado en:
-- 🔄 [Render.com](https://railway.com/) (Rutas temporales hasta la subida de la real)
+- 🔄 [Render.com](auriosback-production.up.railway.app)
 - 🌍 [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) (Rutas temporales hasta la subida de la real)
 
 
