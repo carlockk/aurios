@@ -1,12 +1,12 @@
 const swaggerJSDoc = require('swagger-jsdoc');
 
-const options = {
+const swaggerSpec = swaggerJSDoc({
   definition: {
     openapi: '3.0.0',
     info: {
       title: 'Aurios API',
       version: '1.0.0',
-      description: 'Documentación interactiva de la API de usuarios y productos con JWT',
+      description: 'Documentación Swagger para Usuarios y Productos',
     },
     servers: [
       {
@@ -23,7 +23,7 @@ const options = {
         bearerAuth: {
           type: 'http',
           scheme: 'bearer',
-          bearerFormat: 'JWT',
+          bearerFormat: 'JWT'
         }
       }
     },
@@ -32,6 +32,6 @@ const options = {
     }]
   },
   apis: ['./routes/*.js'],
-};
+});
 
-module.exports = swaggerJSDoc(options);
+module.exports = swaggerSpec;
