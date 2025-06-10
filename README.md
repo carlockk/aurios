@@ -84,7 +84,7 @@ Puede obtener un token iniciando sesión con `POST /api/users/login`.
 | Actualizar producto        | PUT    | `/api/product/update/:id`          |
 | Eliminar producto          | DELETE | `/api/product/delete/:id`          |
 
-Al insertar un producto, ahora se agrega el usuario que lo crea automaticamente al producto
+Logre asociar el usuario autenticado al crear un producto nuevo
 
 > Requieren token: `create`, `update`, `delete`
 
