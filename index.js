@@ -11,19 +11,20 @@ const productRouter = require('./routes/productRoutes');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./config/swagger');
 
-// Conexión a base de datos
+// Conexión a MongoDB
 connectDB();
 
 app.use(cors());
 app.use(express.json());
 
-// ✅ Montar Swagger
+// 🔍 Documentación Swagger
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// Rutas API
+// Rutas de API
 app.use('/api/users', userRouter);
 app.use('/api/product', productRouter);
 
-app.listen(process.env.PORT, () => {
-  console.log('Servidor escuchando en el puerto ' + process.env.PORT);
-});
+// Iniciar servidor
+app.listen(process.env.PORT, () =>
+  console.log('Servidor escuchando en el puerto ' + process.env.PORT)
+);

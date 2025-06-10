@@ -49,7 +49,7 @@ const userRouter = express.Router();
  * @swagger
  * /api/users/login:
  *   post:
- *     summary: Iniciar sesión (obtener token JWT)
+ *     summary: Iniciar sesión (retorna token JWT)
  *     tags: [Usuarios]
  *     requestBody:
  *       required: true
@@ -67,14 +67,14 @@ const userRouter = express.Router();
  *                 type: string
  *     responses:
  *       200:
- *         description: Autenticación exitosa con token JWT
+ *         description: Token generado
  */
 
 /**
  * @swagger
  * /api/users/verifytoken:
  *   get:
- *     summary: Verificar token JWT (protegido)
+ *     summary: Verificar token JWT
  *     tags: [Usuarios]
  *     security:
  *       - bearerAuth: []
@@ -98,7 +98,7 @@ const userRouter = express.Router();
  * @swagger
  * /api/users/update:
  *   put:
- *     summary: Actualizar información de usuario (protegido)
+ *     summary: Actualizar datos del usuario
  *     tags: [Usuarios]
  *     security:
  *       - bearerAuth: []

@@ -21,7 +21,7 @@ const router = express.Router();
  * @swagger
  * /api/product/create:
  *   post:
- *     summary: Crear un nuevo producto
+ *     summary: Crear un producto
  *     tags: [Productos]
  *     security:
  *       - bearerAuth: []
@@ -62,33 +62,34 @@ const router = express.Router();
  * @swagger
  * /api/product/readone/{id}:
  *   get:
- *     summary: Obtener un producto por ID
+ *     summary: Obtener producto por ID
  *     tags: [Productos]
  *     parameters:
  *       - in: path
  *         name: id
- *         required: true
  *         schema:
  *           type: string
+ *         required: true
+ *         description: ID del producto
  *     responses:
  *       200:
- *         description: Detalle del producto
+ *         description: Producto encontrado
  */
 
 /**
  * @swagger
  * /api/product/update/{id}:
  *   put:
- *     summary: Actualizar un producto por ID
+ *     summary: Actualizar producto por ID
  *     tags: [Productos]
  *     security:
  *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
- *         required: true
  *         schema:
  *           type: string
+ *         required: true
  *     requestBody:
  *       required: true
  *       content:
@@ -109,16 +110,16 @@ const router = express.Router();
  * @swagger
  * /api/product/delete/{id}:
  *   delete:
- *     summary: Eliminar un producto por ID
+ *     summary: Eliminar producto por ID
  *     tags: [Productos]
  *     security:
  *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
- *         required: true
  *         schema:
  *           type: string
+ *         required: true
  *     responses:
  *       200:
  *         description: Producto eliminado
