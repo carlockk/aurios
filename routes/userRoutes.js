@@ -122,15 +122,24 @@ const userRouter = express.Router();
 
 /**
  * @swagger
- * /api/users/delete:
+ * /api/users/delete/{id}:
  *   delete:
- *     summary: Eliminar el usuario actual
+ *     summary: Eliminar un usuario por su ID
  *     tags: [Usuarios]
  *     security:
  *       - bearerAuth: []
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: ID del usuario a eliminar
+ *         schema:
+ *           type: string
  *     responses:
  *       200:
- *         description: Usuario eliminado
+ *         description: Usuario eliminado correctamente
+ *       404:
+ *         description: Usuario no encontrado
  */
 
 userRouter.post('/register', createUser);
